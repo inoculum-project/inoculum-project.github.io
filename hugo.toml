@@ -1,0 +1,38 @@
+baseURL = "https://inoculum-project.github.io/"
+languageCode = "en-us"
+title = "INOCULUM"
+
+[params]
+  description = "Boosting the Immunity of Storage Systems Against Ransomware"
+  tagline = "A secure-by-design storage solution resilient to ransomware evolution"
+  funding = "NORTE2030-FEDER-00868400"
+  institution = "INESC TEC · University of Minho"
+  startDate = "May 2026"
+  endDate = "May 2029"
+  totalCost = "€174,096"
+  principalInvestigator = "João Paulo"
+  piLink = "https://dsr-haslab.github.io"
+  githubOrg = "https://dsr-haslab.github.io"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 2
+  [[menu.main]]
+    name = "Outputs"
+    url = "/outputs/"
+    weight = 3
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

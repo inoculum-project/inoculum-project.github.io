@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.description }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts (Google) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+  {{ $css := resources.Get "css/main.css" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="{{ .Title }}">
+  <meta property="og:description" content="{{ site.Params.description }}">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="{{ .Permalink }}">
+</head>
+<body>
+
+  <!-- Navigation -->
+  {{ partial "nav.html" . }}
+
+  <!-- Main content -->
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- Funding bar -->
+  {{ partial "funding-bar.html" . }}
+
+  <!-- Footer -->
+  {{ partial "footer.html" . }}
+
+  <!-- JS -->
+  {{ $js := resources.Get "js/main.js" }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+
+</body>
+</html>

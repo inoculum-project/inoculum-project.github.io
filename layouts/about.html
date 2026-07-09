@@ -1,0 +1,223 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__eyebrow">About the Project</div>
+    <h1 class="page-header__title">What is INOCULUM?</h1>
+    <p class="page-header__desc">
+      INOCULUM will research new secure-by-design storage solutions that ensure full data recovery 
+      under ransomware attacks, are resilient to human error, and comply with the high-performance I/O needs
+      of data-intensive applications and critical infrastructures supporting them.
+    </p>
+  </div>
+</div>
+
+<!-- ── Abstract + facts ── -->
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="section-label">Abstract</div>
+        <h2 class="section-title">The Vision</h2>
+        <p>
+          Cryptographic ransomware blocks access to users' data through file encryption until a ransom is paid.
+          Critical sectors, such as healthcare, finance, and governments are increasingly targeted by these attacks, 
+          leading to high financial penalties and service disruption.
+        </p>
+        <p>
+          Current defences against these attacks share a structural weakness: they are reactive. 
+          Detection may miss attacks, or be too slow to prevent data loss. Periodic snapshots and
+          backups are expensive and done at regular intervals (e.g., daily, weekly). 
+          Both leave a window where critical data can be compromised. Cloud-based
+          backups add cost, latency, and forces organisations to surrender data sovereignty.
+        </p>
+        <p>
+          INOCULUM takes a fundamentally different approach: <em>security is the primary design
+          constraint, not an afterthought</em>. Using Copy-on-Write (CoW) with a Write-Once-Read-Many
+          (WORM) strategy, every data modification produces an immutable copy. Ransomware
+          encryption always lands on a new version — the previous content is always intact,
+          and quicker to recover — with no periodic snapshot schedule and no cloud service dependence.
+        </p>
+        <p>
+          Crucially, INOCULUM targets <strong>high-performance storage appliances and enterprise
+          I/O solutions</strong>. The project researches
+          efficient I/O with technologies, such as <strong>SPDK</strong> and
+          <strong>io_uring</strong>, to alleviate CoW perfomance overhead, and advanced 
+          data reduction techniques such as <strong>deduplication</strong> and <strong>compression</strong>, to reduce storage costs.  
+          AI and heuristic-based algorithms are used to identify and increase protection on critical data under a ransomware attack.
+        </p>
+      </div>
+
+      <div class="about-sidebar">
+        <div class="fact-card">
+          <div class="fact-card__label">Acronym</div>
+          <div class="fact-card__value">INOCULUM</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Reference</div>
+          <div class="fact-card__value">NORTE2030-FEDER-00868400</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Principal Investigator</div>
+          <div class="fact-card__value"><a href="https://dsr-haslab.github.io" target="_blank" rel="noopener">João Paulo</a></div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Host Institution</div>
+          <div class="fact-card__value">INESC TEC · University of Minho</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Timeline</div>
+          <div class="fact-card__value">May 2026 – May 2029 · 36 months</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Project DOI</div>
+          <div class="fact-card__value"><a href="https://doi.org/10.54499/2023.17155.ICDT" target="_blank" rel="noopener">10.54499/2023.17155.ICDT</a></div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__label">Keywords</div>
+          <div class="fact-card__value">
+            <div class="tags">
+              <span class="tag">Storage Systems</span>
+              <span class="tag">Ransomware</span>
+              <span class="tag">Security</span>
+              <span class="tag">SPDK</span>
+              <span class="tag">io_uring</span>
+              <span class="tag">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── The Problem ── -->
+<section style="background: var(--deep);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Why Existing Defences Fail</h2>
+      <p class="section-desc">Avoidance, detection, and backup-based recovery each carry a fundamental weakness that ransomware exploits.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 10v10l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Avoidance Falls Short</h3>
+        <p class="pillar__body">Access-control and hiding strategies are bypassed by user misconfigurations and ransomware injecting malicious code into trusted processes.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <path d="M8 32 L20 8 L32 32 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <line x1="20" y1="19" x2="20" y2="25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="28" r="1" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">Detection Lags Behind</h3>
+        <p class="pillar__body">Signature and ML-based detection is reactive — data may already be encrypted before an alert fires, and new ransomware variants are built specifically to mimic benign I/O behaviour.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <rect x="8" y="10" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M14 30 L14 36 M26 30 L26 36" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12 20 L18 20 M22 20 L28 20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Backups Have a Gap</h3>
+        <p class="pillar__body">Periodic snapshots leave a window of unrecoverable data proportional to backup frequency. Cloud-based recovery adds per-GB cost, network latency, and GDPR sovereignty risks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Our Approach ── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Secure-by-Design, High-Performance</h2>
+      <p class="section-desc">
+        A storage solution where ransomware <em>cannot</em> destroy your data —
+        built for the throughput demands of real storage appliances.
+      </p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="8" y="14" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M14 14V11a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="20" cy="23" r="2" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">No Backups Required</h3>
+        <p class="pillar__body">Copy-on-Write with a Write-Once-Read-Many strategy generates an immutable copy on every write. Full history is always present — no snapshots, no cloud, quicker recovery window.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="6" y="12" width="28" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M6 18 H34" stroke="currentColor" stroke-width="1"/>
+          <path d="M12 24 H20 M24 24 H28" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+         <h3 class="pillar__title">Cost-Effective Storage</h3>
+        <p class="pillar__body"> Explores compression and deduplication techniques to reduce storage costs.  AI and heuristic-based algorithms are used to identify and increase protection on critical data under a ransomware attack.
+      </p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="8" y="8" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="8" y="17" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="8" y="26" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="28" cy="11" r="1.5" fill="currentColor"/>
+          <circle cx="28" cy="20" r="1.5" fill="currentColor"/>
+          <circle cx="28" cy="29" r="1.5" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">Built for High-performance I/O</h3>
+        <p class="pillar__body">Explores efficient I/O via SPDK and io_uring to minimise CoW performance overhead and comply with the requirements of modern hardware and data-intensive applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Impact ── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Impact</div>
+      <h2 class="section-title">Why It Matters</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <path d="M20 6 L34 12 V22 C34 30 27 36 20 38 C13 36 6 30 6 22 V12 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M14 20 L18 24 L26 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="pillar__title">Critical Infrastructure</h3>
+        <p class="pillar__body">Healthcare, finance, and government organisations handling highly sensitive data can adopt digital services with confidence, knowing data is always recoverable — even under sophisticated attacks.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 10 C14 14 14 26 20 30 C26 26 26 14 20 10Z" stroke="currentColor" stroke-width="1" fill="none"/>
+          <line x1="6" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Data Sovereignty</h3>
+        <p class="pillar__body">On-premises, backup-free recovery eliminates the need for third-party cloud storage, keeping sensitive data within organisational boundaries and fully compliant with GDPR and sector-specific regulations.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <path d="M8 32 C8 20 16 14 20 12 C24 14 32 20 32 32" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <path d="M14 32 C14 24 17 20 20 18 C23 20 26 24 26 32" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <line x1="8" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">New Research Direction</h3>
+        <p class="pillar__body">INOCULUM opens a research path at the intersection of storage systems and security — shifting the community focus from reactive detection to proactive, storage-level immunity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

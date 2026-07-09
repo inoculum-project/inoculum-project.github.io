@@ -1,0 +1,161 @@
+{{ define "main" }}
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero__ring" aria-hidden="true">
+    <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="240" stroke="#c8922a" stroke-width="0.5"/>
+      <circle cx="250" cy="250" r="190" stroke="#4a8f87" stroke-width="0.5" stroke-dasharray="4 8"/>
+      <circle cx="250" cy="250" r="140" stroke="#c8922a" stroke-width="0.5" stroke-dasharray="2 12"/>
+      <circle cx="250" cy="250" r="90"  stroke="#4a8f87" stroke-width="0.5"/>
+      <circle cx="250" cy="250" r="40"  stroke="#c8922a" stroke-width="0.5"/>
+      <circle cx="250" cy="10"  r="4"   fill="#c8922a" opacity="0.6"/>
+      <circle cx="490" cy="250" r="3"   fill="#4a8f87" opacity="0.6"/>
+      <circle cx="250" cy="490" r="4"   fill="#c8922a" opacity="0.4"/>
+      <circle cx="10"  cy="250" r="3"   fill="#4a8f87" opacity="0.4"/>
+      <line x1="250" y1="10" x2="250" y2="490" stroke="#333750" stroke-width="0.3"/>
+      <line x1="10" y1="250" x2="490" y2="250" stroke="#333750" stroke-width="0.3"/>
+      <line x1="74" y1="74" x2="426" y2="426" stroke="#333750" stroke-width="0.3"/>
+      <line x1="426" y1="74" x2="74" y2="426" stroke="#333750" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,5vw,4rem);align-items:center;">
+      <div class="hero__content">
+        <h1 class="hero__title animate-fade-up delay-2">
+          <span style="white-space:nowrap;"><span class="accent">Inoculating</span> Storage</span><br>
+          <span style="white-space:nowrap;">Against Ransomware</span>
+      </h1>
+        <p class="hero__subtitle animate-fade-up delay-3">
+          Researching performance and cost-effective secure-by-design storage systems resilient to ransomware attacks</p>
+        <div class="hero__actions animate-fade-up delay-4">
+          <a href="/about/" class="btn btn--primary">Explore the Project</a>
+          <a href="/outputs/" class="btn btn--outline">Outputs</a>
+        </div>
+      </div>
+      <img src="{{ "images/logo-cow-syringe.png" | relURL }}" alt="INOCULUM logo" style="width:clamp(200px,28vw,320px);height:auto;" class="animate-fade-up">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Why current solutions fail ── -->
+<section style="background: var(--deep);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Existing Defences Are Failing</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 10v10l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Avoidance Falls Short</h3>
+        <p class="pillar__body">Access-control measures are bypassed by user misconfigurations and ransomware masking as trusted process.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <path d="M8 32 L20 8 L32 32 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <line x1="20" y1="19" x2="20" y2="25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="28" r="1" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">Detection Lags Behind</h3>
+        <p class="pillar__body">Reactive by design — by the time an alert fires, data may already be encrypted. New ransomware variants evade detection.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none">
+          <rect x="8" y="10" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M14 30 L14 36 M26 30 L26 36" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12 20 L18 20 M22 20 L28 20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Backups Have a Gap</h3>
+        <p class="pillar__body">Periodic backups leave a window of unrecoverable data. Cloud solutions add cost, latency, and sovereignty concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Our approach ── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">The INOCULUM Approach</div>
+      <h2 class="section-title">Secure-by-Design, High-Performance</h2>
+      <p class="section-desc">
+        Storage system designed so that ransomware <em>cannot</em> destroy critical data. Built for the performance demands of real storage appliances and data-intensive workloads.
+      </p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="8" y="14" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M14 14V11a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="20" cy="23" r="2" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">No Backups Required</h3>
+        <p class="pillar__body">Copy-on-Write with a Write-Once-Read-Many strategy generates an immutable copy on every write. Full history is always present — no snapshots, no cloud, quicker recovery window.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="6" y="12" width="28" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M6 18 H34" stroke="currentColor" stroke-width="1"/>
+          <path d="M12 24 H20 M24 24 H28" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <h3 class="pillar__title">Cost-Effective Storage</h3>
+        <p class="pillar__body">Explores compression and deduplication techniques to reduce storage costs.  AI and heuristic-based algorithms are used to identify and increase protection on critical data under a ransomware attack.
+      </div>
+      <div class="pillar">
+        <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" style="color:var(--teal)">
+          <rect x="8" y="8" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="8" y="17" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="8" y="26" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="28" cy="11" r="1.5" fill="currentColor"/>
+          <circle cx="28" cy="20" r="1.5" fill="currentColor"/>
+          <circle cx="28" cy="29" r="1.5" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar__title">Built for High-performance I/O</h3>
+        <p class="pillar__body">Explores efficient I/O via SPDK and io_uring to minimise CoW performance overhead and comply with the requirements of modern hardware and data-intensive applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── News ── -->
+<section style="background: var(--deep);">
+  <div class="container">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-label">Updates</div>
+        <h2 class="section-title" style="margin-bottom:0;">Latest News</h2>
+      </div>
+      <a href="/news/" class="btn btn--outline">All News</a>
+    </div>
+    {{ $posts := where site.RegularPages "Section" "news" }}
+    {{ if $posts }}
+    <div class="news-grid">
+      {{ range first 3 (sort $posts "Date" "desc") }}
+      <article class="news-card">
+        <div class="news-card__body">
+          <div class="news-card__date">{{ .Date.Format "Jan 02, 2006" }}</div>
+          <h3 class="news-card__title">{{ .Title }}</h3>
+          <p class="news-card__excerpt">{{ .Summary | truncate 120 }}</p>
+          <a href="{{ .RelPermalink }}" class="news-card__link">Read more →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p style="color:var(--text-dim);font-style:italic;">News and updates will appear here as the project progresses.</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

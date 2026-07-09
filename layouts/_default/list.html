@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__eyebrow">INOCULUM</div>
+    <h1 class="page-header__title">{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-header__desc">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<section>
+  <div class="container">
+    {{ .Content }}
+    {{ if .Pages }}
+    <div class="news-grid">
+      {{ range .Pages }}
+      <article class="news-card">
+        <div class="news-card__body">
+          <div class="news-card__date">{{ .Date.Format "Jan 02, 2006" }}</div>
+          <h2 class="news-card__title"><a href="{{ .RelPermalink }}" style="color:inherit;text-decoration:none;">{{ .Title }}</a></h2>
+          <p class="news-card__excerpt">{{ .Summary | truncate 140 }}</p>
+          <a href="{{ .RelPermalink }}" class="news-card__link">Read more →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

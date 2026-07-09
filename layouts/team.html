@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__eyebrow">People</div>
+    <h1 class="page-header__title">Research Team</h1>
+    <p class="page-header__desc">
+      Senior researchers, PhD, MSc and BSc students with expertise in storage systems,
+      security, and AI — the three pillars of INOCULUM.
+    </p>
+    <p class="page-header__desc" style="margin-top:0.5rem;">
+      Want to know more about us? Visit
+      <a href="https://dsr-haslab.github.io" target="_blank" rel="noopener">DSR</a>
+      and <a href="https://www.inesctec.pt/en" target="_blank" rel="noopener">INESC TEC</a>.
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="team-grid">
+      {{ range site.Data.team }}
+      <div class="team-card">
+        {{ if .photo }}
+        <img src="{{ .photo | relURL }}" alt="{{ .name }}" class="team-card__photo">
+        {{ else }}
+        <div class="team-card__avatar">
+          {{ substr .name 0 1 }}
+        </div>
+        {{ end }}
+        <div class="team-card__info">
+          <h2 class="team-card__name">{{ .name }}</h2>
+          {{ if .profile }}
+          <a href="{{ .profile }}" class="team-card__link" target="_blank" rel="noopener">
+            View Profile →
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

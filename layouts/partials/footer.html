@@ -1,0 +1,41 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <div class="footer__brand-name">INO<span>CULUM</span></div>
+        <p class="footer__tagline">Boosting the Immunity of Storage Systems Against Ransomware</p>
+        <p style="font-size:0.82rem;color:var(--text-dim);margin:0;">
+          {{ site.Params.institution }}<br>
+          {{ site.Params.startDate }} – {{ site.Params.endDate }}
+        </p>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <ul class="footer__links" role="list">
+          {{ range site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <ul class="footer__links" role="list">
+          <li><a href="{{ site.Params.githubOrg }}" target="_blank" rel="noopener">DSR/HASLab</a></li>
+          <li><a href="https://www.inesctec.pt/en" target="_blank" rel="noopener">INESC TEC</a></li>
+          <li><a href="https://www.uminho.pt/EN" target="_blank" rel="noopener">University of Minho</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        © {{ now.Year }} INOCULUM Project · Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,27 @@
+- name: "João Paulo"
+  profile: "https://jtpaulo.github.io"
+  photo: "images/team/jtpaulo.jpg"
+
+- name: "Tânia Esteves"
+  profile: "https://taniaesteves.github.io"
+  photo: "images/team/tania.jpg"
+
+- name: "Ricardo Macedo"
+  profile: "https://rgmacedo.github.io"
+  photo: "images/team/rgmacedo.jpg"
+
+- name: "Cláudia Brito"
+  profile: "https://claudiavmbrito.github.io"
+  photo: "images/team/claudia.jpg"
+
+- name: "João Marco Silva"
+  profile: "https://www.inesctec.pt/en/people/joao-marco"
+
+- name: "Bruno Pereira"
+  profile: "https://www.inesctec.pt/pt/pessoas/bruno-filipe-pereira"
+  photo: "images/team/bruno.jpg"
+
+- name: "Pedro Moreira"
+  profile: "https://www.inesctec.pt/pt/pessoas/pedro-miguel-moreira"
+
+
