@@ -823,70 +823,81 @@ body::before {
 
 .team-card__link:hover { color: var(--parchment); }
 
-/* ── Publications ── */
+/* ── Publications (flowing academic-list style) ── */
+.pub-year-group {
+  margin-bottom: 2.5rem;
+}
+
+.pub-year-heading {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.pub-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.25rem;
-  transition: border-color var(--transition);
+.pub-entry {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.pub-item:hover { border-color: var(--border-hi); }
-
-.pub-item__year {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-dim);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  display: flex;
-  align-items: center;
+.pub-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.pub-item__title {
+.pub-entry__title {
   font-size: 1rem;
   color: var(--text-bright);
-  margin-bottom: 0.4rem;
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 500;
+  margin: 0 0 0.35rem;
 }
 
-.pub-item__authors {
-  font-size: 0.82rem;
+.pub-entry__title a {
+  color: var(--text-bright);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-hi);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.pub-entry__title a:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+.pub-entry__authors {
+  font-size: 0.85rem;
   color: var(--text-dim);
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.3rem;
 }
 
-.pub-item__venue {
-  font-size: 0.82rem;
+.pub-entry__venue {
+  font-size: 0.85rem;
   color: var(--teal);
   font-style: italic;
-  margin-bottom: 0.6rem;
+  margin: 0;
 }
 
-.pub-item__actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.pub-entry__venue a {
+  color: var(--teal);
+  text-decoration: underline;
 }
 
-.pub-item__award {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
+.pub-entry__award {
+  display: inline-block;
   font-family: var(--font-mono);
+  font-style: normal;
   font-size: 0.62rem;
   color: var(--amber);
   text-transform: uppercase;
@@ -895,19 +906,53 @@ body::before {
   border: 1px solid rgba(200,146,42,0.2);
   border-radius: 2px;
   padding: 0.15rem 0.5rem;
+  margin-left: 0.6rem;
 }
 
-.pub-link {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--text-dim);
+/* ── Software / Tools list (same flowing style) ── */
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-entry {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tool-entry__name {
+  font-size: 1rem;
+  color: var(--text-bright);
+  font-weight: 500;
+  margin: 0 0 0.35rem;
+}
+
+.tool-entry__name a {
+  color: var(--text-bright);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: color var(--transition);
+  border-bottom: 1px solid var(--border-hi);
+  transition: color var(--transition), border-color var(--transition);
 }
 
-.pub-link:hover { color: var(--amber); }
+.tool-entry__name a:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+.tool-entry__desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 0 0 0.6rem;
+}
 
 /* ── Tags ── */
 .tag {
@@ -1191,8 +1236,7 @@ body::before {
   .task-item { grid-template-columns: 3.5rem 1fr; gap: 1rem; }
   .tasks-grid::before { left: 1.5rem; }
 
-  .pub-item { grid-template-columns: 1fr; }
-  .pub-item__year { writing-mode: horizontal-tb; transform: none; }
+  .pub-entry, .tool-entry { padding-bottom: 1rem; }
 
   .hero__ring { display: none; }
   

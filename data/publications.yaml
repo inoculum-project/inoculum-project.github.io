@@ -1,44 +1,9 @@
-- title: "A survey and classification of storage deduplication systems"
-  authors: "Paulo, João, and José Pereira"
-  venue: "ACM Computing Surveys (CSUR)"
-  year: 2014
-  doi: "10.1145/2611778"
-  pdf: "https://dsr-haslab.github.io/repository/pp14.pdf"
-  type: "journal"
-  tags: ["storage", "deduplication"]
-
-- title: "SafeFS: A modular architecture for secure user-space file systems: One fuse to rule them all"
-  authors: "Pontes, Rogério, Dorian Burihabwa, Francisco Maia, João Paulo, et al."
-  venue: "ACM International Systems and Storage Conference (SYSTOR)"
-  year: 2017
-  doi: "10.1145/3078468.3078480"
-  pdf: "https://dsr-haslab.github.io/repository/pbm+17.pdf"
-  type: "conference"
-  award: "Best Student Paper"
-  tags: ["security", "file systems"]
-
-- title: "Accelerating deep learning training through transparent storage tiering"
-  authors: "Dantas, Marco, Diogo Leitão, Peter Cui, Ricardo Macedo, Xinlian Liu, Weijia Xu, and João Paulo"
-  venue: "IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid)"
-  year: 2022
-  doi: "10.1109/CCGrid54584.2022.0001"
-  pdf: "https://dsr-haslab.github.io/repository/dlc+22.pdf"
-  type: "conference"
-  tags: ["storage", "AI", "HPC"]
-
-- title: "PAIO: General, Portable I/O Optimizations With Minor Application Modifications"
-  authors: "Macedo, Ricardo, Yusuke Tanimura, Jason Haga, Vijay Chidambaram, José Pereira, and João Paulo"
-  venue: "USENIX Conference on File and Storage Technologies (FAST)"
-  year: 2022
-  pdf: "https://dsr-haslab.github.io/repository/mth+22.pdf"
-  type: "conference"
-  tags: ["storage", "I/O", "HPC"]
-
-- title: "CRIBA: A Tool for Comprehensive Analysis of Cryptographic Ransomware's I/O Behavior"
-  authors: "Esteves, Tânia, Bruno Pereira, Rui Pedro Oliveira, João Marco, and João Paulo"
-  venue: "International Symposium on Reliable Distributed Systems (SRDS)"
-  year: 2023
-  doi: "10.1109/SRDS60354.2023.00015"
-  pdf: "https://dsr-haslab.github.io/repository/epo+23.pdf"
-  type: "conference"
-  tags: ["ransomware", "security", "storage"]
+#- title: "CRIBA: A Tool for Comprehensive Analysis of Cryptographic Ransomware's I/O Behavior"
+#  authors: "Esteves, Tânia, Bruno Pereira, Rui Pedro Oliveira, João Marco, and João Paulo"
+#  venue: "International Symposium on Reliable Distributed Systems (SRDS)"
+#  year: 2023
+#  doi: "10.1109/SRDS60354.2023.00015"
+#  pdf: "https://dsr-haslab.github.io/repository/epo+23.pdf"
+#  type: "conference"
+#  award: "Best Paper Award"
+#  tags: ["ransomware", "security", "storage"]

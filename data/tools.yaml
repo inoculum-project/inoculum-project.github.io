@@ -1,0 +1,4 @@
+#- name: "CRIBA"
+#  description: "A tool for comprehensive analysis of cryptographic ransomware's I/O behavior."
+#  url: "https://github.com/dsr-haslab/criba"
+#  tags: ["ransomware", "security"]

@@ -3,34 +3,86 @@
   <div class="container">
     <h1 class="page-header__title">Publications &amp; Software</h1>
     <p class="page-header__desc">
-      Peer-reviewed papers and open-source software outputs.
+      Peer-reviewed papers and open-source software outputs from the INOCULUM team.
     </p>
   </div>
 </div>
 
-<!-- INOCULUM publications (to be added as the project matures) -->
+<!-- Publications, grouped by year, most recent first -->
 <section>
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Project Publications</h2>
+      <h2 class="section-title">Publications</h2>
     </div>
+
+    {{ $pubs := site.Data.publications }}
+    {{ if $pubs }}
+      {{ $years := slice }}
+      {{ range $pubs }}
+        {{ $years = $years | append .year }}
+      {{ end }}
+      {{ $yearsAsc := sort ($years | uniq) }}
+      {{ $count := len $yearsAsc }}
+
+      {{ range $i := (seq 0 (sub $count 1)) }}
+      {{ $year := index $yearsAsc (sub (sub $count 1) $i) }}
+      <div class="pub-year-group">
+        <h3 class="pub-year-heading">{{ $year }}</h3>
+        <ul class="pub-list" role="list">
+          {{ range where $pubs "year" $year }}
+          <li class="pub-entry">
+            <p class="pub-entry__title">
+              {{ if .pdf }}<a href="{{ .pdf }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+            </p>
+            <p class="pub-entry__authors">{{ .authors }}</p>
+            <p class="pub-entry__venue">
+              {{ .venue }}{{ if .doi }} · <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+              {{ if .award }}<span class="pub-entry__award">{{ .award }}</span>{{ end }}
+            </p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ else }}
     <p style="color:var(--text-dim);font-style:italic;font-size:0.95rem;">
       Publications from this project will appear here as they are accepted.
     </p>
+    {{ end }}
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- Software -->
+<!-- Software / Tools -->
 <section style="background: var(--deep);">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Open-Source Tools</h2>
+      <h2 class="section-title">Software</h2>
     </div>
+
+    {{ $tools := site.Data.tools }}
+    {{ if $tools }}
+    <ul class="tool-list" role="list">
+      {{ range $tools }}
+      <li class="tool-entry">
+        <p class="tool-entry__name">
+          {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}
+        </p>
+        <p class="tool-entry__desc">{{ .description }}</p>
+        {{ if .tags }}
+        <div class="tags">
+          {{ range .tags }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ else }}
     <p style="color:var(--text-dim);font-style:italic;font-size:0.95rem;">
       Prototypes will appear here as the project progresses.
     </p>
+    {{ end }}
   </div>
 </section>
 
