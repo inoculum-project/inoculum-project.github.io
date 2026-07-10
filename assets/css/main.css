@@ -405,7 +405,7 @@ body::before {
 }
 
 .section-desc {
-  max-width: 600px;
+  max-width: 1000px;
   color: var(--text-dim);
   font-size: 1rem;
 }
@@ -1011,7 +1011,7 @@ body::before {
 .page-header__desc {
   font-size: 1.05rem;
   color: var(--text-dim);
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 /* ── Funding footer bar ── */
