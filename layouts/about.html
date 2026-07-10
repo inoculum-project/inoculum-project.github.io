@@ -17,30 +17,27 @@
       <div class="about-body">
         <h2 class="section-title">The Vision</h2>
         <p>
-          Cryptographic ransomware blocks access to users' data through file encryption until a ransom is paid.
-          Critical sectors, such as healthcare, finance, and governments are increasingly targeted by these attacks, 
+          Cryptographic ransomware blocks access to users' data through encryption until a ransom is paid.
+          Critical sectors (e.g., healthcare, finance, and governments) are increasingly targeted by these attacks, 
           leading to high financial penalties and service disruption.
         </p>
         <p>
-          Current defences against these attacks share a structural weakness: they are reactive. 
-          Detection may miss attacks, or be too slow to prevent data loss. Periodic snapshots and
+          Current defenses share a structural weakness: they are reactive. 
+          Detection may miss attacks, or be too slow to prevent data loss. Periodic 
           backups are expensive and done at regular intervals (e.g., daily, weekly). 
-          Both leave a window where critical data can be compromised. Cloud-based
-          backups add cost, latency, and forces organisations to surrender data sovereignty.
+          Both leave a window where data can be compromised. Cloud-based
+          backups add cost, latency, and forces organizations to surrender data sovereignty.
         </p>
         <p>
-          INOCULUM takes a fundamentally different approach: <em>security is the primary design
-          constraint, not an afterthought</em>. Using Copy-on-Write (CoW) with a Write-Once-Read-Many
-          (WORM) strategy, every data modification produces an immutable copy. Ransomware
+          INOCULUM explores a different approach: <em>security is the primary design
+          constraint, not an afterthought</em>. Using Copy-on-Write (CoW), every data modification produces an immutable copy. Ransomware
           encryption always lands on a new version — the previous content is always intact,
-          and quicker to recover — with no periodic snapshot schedule and no cloud service dependence.
+          and recoverable — with no periodic snapshot schedule and no cloud service dependence.
         </p>
         <p>
-          Crucially, INOCULUM targets <strong>high-performance storage appliances and enterprise
-          I/O solutions</strong>. The project researches
-          efficient I/O with technologies, such as <strong>SPDK</strong> and
-          <strong>io_uring</strong>, to alleviate CoW perfomance overhead, and advanced 
-          data reduction techniques such as <strong>deduplication</strong> and <strong>compression</strong>, to reduce storage costs.  
+          INOCULUM targets <strong>high-performance storage</strong> appliances and data-intensive applications. 
+          Performance and cost-efficient I/O is attainable by exploring technologies, such as <strong>SPDK</strong> and
+          <strong>io_uring</strong>, and data reduction techniques such as <strong>deduplication</strong> and <strong>compression</strong>.
           AI and heuristic-based algorithms are used to identify and increase protection on critical data under a ransomware attack.
         </p>
       </div>
@@ -76,7 +73,8 @@
             <div class="tags">
               <span class="tag">Storage Systems</span>
               <span class="tag">Ransomware</span>
-              <span class="tag">Security</span>
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Copy-on-Write</span>
               <span class="tag">SPDK</span>
               <span class="tag">io_uring</span>
               <span class="tag">AI</span>
@@ -209,7 +207,7 @@
           <line x1="8" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
         <h3 class="pillar__title">New Research Direction</h3>
-        <p class="pillar__body">INOCULUM opens a research path at the intersection of storage systems and security — shifting the community focus from reactive detection to proactive, storage-level immunity.</p>
+        <p class="pillar__body">INOCULUM opens a research path at the intersection of storage systems and cybersecurity — shifting the community focus from reactive detection to proactive, storage-level immunity.</p>
       </div>
     </div>
   </div>
