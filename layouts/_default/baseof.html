@@ -22,6 +22,8 @@
   <meta property="og:description" content="{{ site.Params.description }}">
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="{{ .Permalink }}">
+
+  {{ template "_internal/google_analytics.html" . }}
 </head>
 <body>
 

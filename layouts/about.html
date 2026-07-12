@@ -18,26 +18,24 @@
         <h2 class="section-title">The Vision</h2>
         <p>
           Cryptographic ransomware blocks access to users' data through encryption until a ransom is paid.
-          Critical sectors (e.g., healthcare, finance, and governments) are increasingly targeted by these attacks, 
+          Critical sectors (e.g., healthcare, finance, governments) are increasingly targeted, 
           leading to high financial penalties and service disruption.
         </p>
         <p>
-          Current defenses share a structural weakness: they are reactive. 
-          Detection may miss attacks, or be too slow to prevent data loss. Periodic 
-          backups are expensive and done at regular intervals (e.g., daily, weekly). 
-          Both leave a window where data can be compromised. Cloud-based
-          backups add cost, latency, and forces organizations to surrender data sovereignty.
+          Current defenses are mostly reactive and have limitations. 
+          Detection may miss or be too slow to respond to attacks. Backups, done at regular intervals (e.g., daily, weekly), 
+          leave a window where data can be compromised. Cloud-based
+          backups add cost, latency, and compromise data sovereignty.
         </p>
         <p>
-          INOCULUM explores a different approach: <em>security is the primary design
+          In INOCULUM <em>security is the primary design
           constraint, not an afterthought</em>. Using Copy-on-Write (CoW), every data modification produces an immutable copy. Ransomware
           encryption always lands on a new version — the previous content is always intact,
           and recoverable — with no periodic snapshot schedule and no cloud service dependence.
         </p>
         <p>
-          INOCULUM targets <strong>high-performance storage</strong> appliances and data-intensive applications. 
-          Performance and cost-efficient I/O is attainable by exploring technologies, such as <strong>SPDK</strong> and
-          <strong>io_uring</strong>, and data reduction techniques such as <strong>deduplication</strong> and <strong>compression</strong>.
+          INOCULUM targets <strong>high-performance storage</strong> deployments. 
+          Performance and cost-efficient I/O is attainable by exploring <strong>emergent technologies</strong> (e.g., SPDK, io_uring), and <strong>data reduction techniques</strong> (e.g., deduplication, compression).
           AI and heuristic-based algorithms are used to identify and increase protection on critical data under a ransomware attack.
         </p>
       </div>
@@ -132,10 +130,10 @@
 <section>
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Secure-by-Design, High-Performance</h2>
+      <h2 class="section-title">Research Goals</h2>
       <p class="section-desc">
-        A storage solution where ransomware <em>cannot</em> destroy your data —
-        built for the throughput demands of real storage appliances.
+        Explore storage solutions where ransomware <em>cannot</em> destroy your data, and that are
+        built for the throughput demands of real storage appliances and data-intensive applications.
       </p>
     </div>
     <div class="pillars">

@@ -36,3 +36,7 @@ title = "INOCULUM"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-B98LJEPX23"
