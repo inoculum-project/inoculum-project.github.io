@@ -44,6 +44,46 @@ document.querySelectorAll('.nav__links a').forEach(a => {
   }
 });
 
+// Photo carousel
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const slides = carousel.querySelectorAll('.carousel__slide');
+  const dots   = carousel.querySelectorAll('.carousel__dot');
+  let current = 0;
+  const show = (i) => {
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, j) => s.classList.toggle('active', j === current));
+    dots.forEach((d, j) => d.classList.toggle('active', j === current));
+    restart();
+  };
+  // Autoplay every 5s, paused while hovered
+  let timer = null;
+  let paused = false;
+  const restart = () => {
+    clearInterval(timer);
+    if (!paused) timer = setInterval(() => show(current + 1), 5000);
+  };
+  carousel.addEventListener('mouseenter', () => { paused = true; clearInterval(timer); });
+  carousel.addEventListener('mouseleave', () => { paused = false; restart(); });
+  restart();
+  carousel.querySelector('.carousel__btn--prev').addEventListener('click', () => show(current - 1));
+  carousel.querySelector('.carousel__btn--next').addEventListener('click', () => show(current + 1));
+  dots.forEach((d, j) => d.addEventListener('click', () => show(j)));
+  // Keyboard and swipe navigation
+  carousel.tabIndex = 0;
+  carousel.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+  let startX = null;
+  carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  carousel.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+});
+
 // Intersection observer for scroll-reveal
 const observerOpts = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
 const revealObserver = new IntersectionObserver((entries) => {

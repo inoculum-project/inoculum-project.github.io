@@ -1177,6 +1177,73 @@ body::before {
 .prose a  { color: var(--amber); border-bottom: 1px solid var(--amber-dim); }
 .prose a:hover { color: var(--parchment); border-bottom-color: var(--parchment); }
 
+/* ── Photo carousel ── */
+.carousel {
+  position: relative;
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--deep);
+  overflow: hidden;
+}
+.carousel__track {
+  position: relative;
+  aspect-ratio: 3 / 2;
+}
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.carousel__slide.active { opacity: 1; pointer-events: auto; }
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-hi);
+  border-radius: 50%;
+  background: rgba(8,9,12,0.65);
+  color: var(--parchment);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.carousel__btn:hover { color: var(--amber); border-color: var(--amber-dim); }
+.carousel__btn--prev { left: 12px; }
+.carousel__btn--next { right: 12px; }
+.carousel__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(212,201,168,0.4);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.carousel__dot.active { background: var(--amber); }
+
 /* ── Utility ── */
 .text-amber   { color: var(--amber); }
 .text-teal    { color: var(--teal); }

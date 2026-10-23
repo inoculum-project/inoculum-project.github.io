@@ -11,6 +11,24 @@
     <div class="prose">
       {{ .Content }}
     </div>
+    {{ with .Params.gallery }}
+    <div class="carousel" aria-roledescription="carousel" aria-label="Photo gallery">
+      <div class="carousel__track">
+        {{ range $i, $img := . }}
+        <figure class="carousel__slide{{ if eq $i 0 }} active{{ end }}" aria-label="{{ add $i 1 }} of {{ len $.Params.gallery }}">
+          <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}">
+        </figure>
+        {{ end }}
+      </div>
+      <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next photo">&#8250;</button>
+      <div class="carousel__dots">
+        {{ range $i, $img := . }}
+        <button type="button" class="carousel__dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show photo {{ add $i 1 }}"></button>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
