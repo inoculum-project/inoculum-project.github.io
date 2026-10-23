@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS -->
-  {{ $css := resources.Get "css/main.css" }}
+  {{ $css := resources.Get "css/main.css" | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
   <!-- Open Graph -->
@@ -42,7 +42,7 @@
   {{ partial "footer.html" . }}
 
   <!-- JS -->
-  {{ $js := resources.Get "js/main.js" }}
+  {{ $js := resources.Get "js/main.js" | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 
 </body>
